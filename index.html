@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage AR Odisha - Home</title>
+  <link rel="icon" href="images/imagelogo.jpg">
+  <link rel="stylesheet" href="animation.css">
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!-- Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .card-bg {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefcfb;
+        }
+        .text-orange-main {
+            color: #ec653a;
+        }
+        .quote-card {
+            background-color: white;
+            border: 1px solid #f2f2f2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .quote-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="images/imagelogo.jpg" alt="Logo" class="h-10 w-10 rounded-lg">
+        <div>
+          <h1 class="text-xl font-bold text-orange-600" data-translate="site_title">Heritage AR Odisha</h1>
+          <p class="text-xs text-gray-500" data-translate="site_subtitle">Cultural Preservation Platform</p>
+        </div>
+      </a>
+
+      <!-- Navbar -->
+      <nav class="flex gap-4 items-center">
+        <a href="index.html" class="px-4 py-2 bg-orange-500 text-white rounded-lg" data-translate="nav_home">Home</a>
+        <a href="explorer.html" class="px-4 py-2 hover:bg-orange-50 rounded-lg" data-translate="nav_explorer">Heritage Explorer</a>
+        <a href="arportal.html" class="px-4 py-2 hover:bg-orange-50 rounded-lg" data-translate="nav_ar">AR Portal</a>
+
+        <!-- Language Switcher -->
+        <select id="languageSwitcher" class="ml-4 border rounded px-2 py-1">
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+          <option value="or">ଓଡ଼ିଆ</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-red-800 to-orange-600 text-white text-center py-24 px-6">
+    <h2 class="text-5xl font-bold mb-4" data-translate="hero_title">Heritage AR <span class="text-yellow-300">Odisha</span></h2>
+    <p class="max-w-2xl mx-auto text-lg mb-8" data-translate="hero_subtitle">
+      Step into the sacred temples, majestic forts, and timeless traditions of Odisha through immersive augmented reality experiences.
+    </p>
+    <div class="flex justify-center gap-6">
+      <a href="explorer.html" class="px-6 py-3 bg-orange-500 rounded-lg shadow-lg" data-translate="explore_button">Explore Heritage Sites</a>
+      <a href="arportal.html" class="px-6 py-3 bg-white text-orange-700 rounded-lg shadow-lg" data-translate="demo_button">Try AR Experience</a>
+    </div>
+  </section>
+
+  <!-- AR Demo Video Section -->
+  <section class="py-16 text-center flex flex-col items-center justify-center bg-orange-50">
+    <h3 class="text-3xl font-bold text-orange-700 mb-6" data-translate="video_title">Cultural Treasures, Digitally Preserved</h3>
+    <div class="w-full max-w-3xl mb-4 fadeUp">
+      <iframe class="w-full h-96 md:h-96 rounded-xl shadow-lg" 
+              src="images\digital_preservation_for_cultural_heritage.mp4" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+    </div>
+    <p class="text-sm text-gray-600" data-translate="video_credit"> Digital Preservation for Cultural Heritage -- Courtesy of Vimeo</p>
+  </section>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Assistant</title>
+<style>
+/* Floating AI button */
+#ai-btn { position: fixed; bottom: 20px; right: 20px; width:60px; height:60px; border-radius:50%; background:#007bff; color:#fff; font-size:28px; border:none; cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:1000; }
+
+/* Chat popup */
+#ai-chat { position: fixed; bottom: 90px; right: 20px; width: 350px; max-width:90%; height:500px; background:#fff; border-radius:10px; display:none; flex-direction:column; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:1000; overflow:hidden; }
+
+/* Header */
+#ai-chat-header { background:#007bff; color:#fff; padding:10px; text-align:center; font-weight:bold; cursor:pointer; }
+
+/* Messages */
+#ai-messages { flex:1; padding:10px; overflow-y:auto; background:#f0f2f5; }
+.message { margin-bottom:10px; padding:8px 12px; border-radius:15px; max-width:80%; word-wrap:break-word; }
+.user { background:#007bff; color:white; align-self:flex-end; }
+.bot { background:#e5e5ea; color:#000; align-self:flex-start; }
+.typing { font-style:italic; color:#555; }
+
+/* Input area */
+#ai-form { display:flex; border-top:1px solid #ccc; }
+#ai-form input { flex:1; padding:10px; border:none; border-radius:0 0 0 10px; }
+#ai-form button { padding:0 20px; border:none; background:#007bff; color:white; cursor:pointer; border-radius:0 0 10px 0; }
+#ai-form button:hover { background:#0056b3; }
+
+/* Quick reply buttons */
+.quick-replies { margin-top:5px; display:flex; flex-wrap:wrap; gap:5px; }
+.quick-replies button { padding:5px 10px; border:none; border-radius:5px; background:#e5e5ea; cursor:pointer; }
+.quick-replies button:hover { background:#d0d0d0; }
+</style>
+</head>
+<body>
+
+<button id="ai-btn">💬</button>
+
+<div id="ai-chat">
+  <div id="ai-chat-header">AI Assistant</div>
+  <div id="ai-messages"></div>
+  <form id="ai-form">
+    <input type="text" id="ai-input" placeholder="Type a message..." autocomplete="off" required>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+const aiBtn = document.getElementById("ai-btn");
+const aiChat = document.getElementById("ai-chat");
+const aiHeader = document.getElementById("ai-chat-header");
+const aiMessages = document.getElementById("ai-messages");
+const aiForm = document.getElementById("ai-form");
+const aiInput = document.getElementById("ai-input");
+
+const sessionId = "session_" + Date.now() + "_" + Math.floor(Math.random()*1000);
+
+// Load previous messages
+let conversation = JSON.parse(localStorage.getItem("aiConversation") || "[]");
+conversation.forEach(msg => appendMessage(msg.text, msg.sender));
+
+// Toggle chat popup
+aiBtn.addEventListener("click", ()=>aiChat.style.display = aiChat.style.display==='flex'?'none':'flex');
+aiHeader.addEventListener("click", ()=>aiChat.style.display='none');
+
+function appendMessage(text,sender,typing=false){
+  const msg = document.createElement("div");
+  msg.classList.add("message",sender);
+  if(typing) msg.classList.add("typing");
+  aiMessages.appendChild(msg);
+
+  if(typing){
+    msg.innerText = "";
+    let i=0;
+    const interval = setInterval(()=>{
+      msg.innerText += text.charAt(i);
+      i++;
+      aiMessages.scrollTop = aiMessages.scrollHeight;
+      if(i>=text.length) clearInterval(interval);
+    },30);
+  } else {
+    msg.innerText = text;
+  }
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+  return msg;
+}
+
+function saveMessage(text,sender){
+  conversation.push({text,sender});
+  localStorage.setItem("aiConversation",JSON.stringify(conversation));
+}
+
+// Quick replies example (optional, can be dynamic)
+function addQuickReplies(options){
+  const container = document.createElement("div");
+  container.classList.add("quick-replies");
+  options.forEach(opt=>{
+    const btn = document.createElement("button");
+    btn.innerText = opt;
+    btn.onclick=()=>{ sendMessage(opt); container.remove(); };
+    container.appendChild(btn);
+  });
+  aiMessages.appendChild(container);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+}
+
+async function sendMessage(message){
+  appendMessage(message,"user");
+  saveMessage(message,"user");
+
+  const typingMsg = appendMessage("","bot",true);
+
+  try{
+    const res = await fetch("/api/chat",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({message,sessionId})
+    });
+    const data = await res.json();
+    typingMsg.remove();
+    appendMessage(data.reply||"Sorry, no response!","bot");
+    saveMessage(data.reply||"Sorry, no response!","bot");
+
+    // Example quick replies (can be dynamic based on AI response)
+    if(data.reply && data.reply.includes("help")){
+      addQuickReplies(["What is AI?","How to use assistant","More info"]);
+    }
+
+  }catch(err){
+    typingMsg.remove();
+    appendMessage("Error: Failed to get response.","bot");
+    console.error(err);
+  }
+}
+
+aiForm.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const message = aiInput.value.trim();
+  if(!message) return;
+  aiInput.value="";
+  sendMessage(message);
+});
+</script>
+</body>
+</html>
+
+
+  <!-- Creative Section -->
+  <section class="py-20 bg-white text-center">
+    <h3 class="text-3xl font-bold text-orange-600 mb-8" data-translate="creative_title">Why Choose Heritage AR Odisha?</h3>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+      <div class="p-6 rounded-xl shadow-lg hover:scale-105 transform transition fadeLeft">
+        <img src="images\sacred.jpg" alt="Temple" class="w-full h-48 object-cover rounded-md mb-4">
+        <h4 class="font-semibold text-orange-700" data-translate="creative_point1">Sacred Temples</h4>
+        <p class="text-gray-600 mt-2" data-translate="creative_desc1">Step inside Odisha’s grand temples with interactive 3D AR views.</p>
+      </div>
+      <div class="p-6 rounded-xl shadow-lg hover:scale-105 transform transition fadeUp">
+        <img src="images\natural.jpg" alt="Nature" class="w-full h-48 object-cover rounded-md mb-4">
+        <h4 class="font-semibold text-orange-700" data-translate="creative_point2">Natural Wonders</h4>
+        <p class="text-gray-600 mt-2" data-translate="creative_desc2">Discover wildlife, hills, rivers, and beaches like never before.</p>
+      </div>
+      <div class="p-6 rounded-xl shadow-lg hover:scale-105 transform transition fadeRight">
+        <img src="images\cultural.jpg" alt="Culture" class="w-full h-48 object-cover rounded-md mb-4">
+        <h4 class="font-semibold text-orange-700" data-translate="creative_point3">Cultural Treasures</h4>
+        <p class="text-gray-600 mt-2" data-translate="creative_desc3">Celebrate Odisha’s festivals, dance, art, and handicrafts in AR.</p>
+      </div>
+    </div>
+  </section>
+
+
+<!-- stats -->
+
+
+<div class="bg-gradient-to-r from-orange-500 to-red-600 height-300px flex items-center justify-center p-4">
+    <div class="max-w-7xl mx-auto text-white text-center">
+        <!-- Title and Subtitle Section -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 text-shadow">
+            Preserving Heritage at Scale
+        </h1>
+        <p class="text-lg md:text-xl font-light max-w-3xl mx-auto mb-16 opacity-90">
+            Our platform has become the leading digital heritage preservation initiative in Eastern India
+        </p>
+
+        <!-- Stats Cards Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="card-bg rounded-2xl p-6 transition-transform transform hover:scale-105">
+                <div class="flex justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white opacity-80" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                    </svg>
+                </div>
+                <h2 class="text-5xl font-bold mb-2">25+</h2>
+                <h3 class="text-xl font-medium mb-1">Heritage Sites</h3>
+                <p class="text-sm opacity-80">Ancient temples, forts, and monuments</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card-bg rounded-2xl p-6 transition-transform transform hover:scale-105">
+                <div class="flex justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white opacity-80" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                    </svg>
+                </div>
+                <h2 class="text-5xl font-bold mb-2">25+</h2>
+                <h3 class="text-xl font-medium mb-1">AR Experiences</h3>
+                <p class="text-sm opacity-80">Immersive virtual tours available</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card-bg rounded-2xl p-6 transition-transform transform hover:scale-105">
+                <div class="flex justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white opacity-80" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                    </svg>
+                </div>
+                <h2 class="text-5xl font-bold mb-2">50+</h2>
+                <h3 class="text-xl font-medium mb-1">Data Source</h3>
+                <p class="text-sm opacity-80">Cultural enthusiasts worldwide</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card-bg rounded-2xl p-6 transition-transform transform hover:scale-105">
+                <div class="flex justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white opacity-80" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                    </svg>
+                </div>
+                <h2 class="text-5xl font-bold mb-2">1000+</h2>
+                <h3 class="text-xl font-medium mb-1">Years History</h3>
+                <p class="text-sm opacity-80">Centuries of preserved heritage</p>
+            </div>
+        </div>
+    </div>
+  </div>
+<!-- Testimonial -->
+ <div class="p-8 md:p-16">
+    <div class="max-w-7xl mx-auto text-center">
+        <!-- Title and Subtitle Section -->
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4 text-orange-main">
+            Voices from Our Community
+        </h1>
+        <p class="text-lg md:text-xl font-light max-w-2xl mx-auto mb-16 text-gray-700">
+            Discover what heritage enthusiasts, scholars, and visitors are saying about their AR experiences
+        </p>
+
+        <!-- Testimonial Cards Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial Card 1 -->
+            <div class="quote-card rounded-xl p-8 flex flex-col justify-between items-start fadeLeft">
+                <span class="text-6xl text-orange-main font-bold mb-4">"</span>
+                <p class="text-gray-600 mb-6 italic text-left">
+                    "This AR platform has revolutionized how we preserve and share Odisha's cultural heritage. The immersive experiences are truly breathtaking."
+                </p>
+                <div class="flex items-center w-full mb-4">
+                    <!-- Rating Stars -->
+                    <div class="flex text-yellow-500 mr-4">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                    </div>
+                </div>
+                <div class="flex items-center text-left">
+                    <img class="w-12 h-12 rounded-full mr-4" src="https://placehold.co/48x48/ec653a/ffffff?text=Priya" onerror="this.src='https://placehold.co/48x48/ec653a/ffffff?text=Priya';" alt="Dr. Priya Maharana">
+                    <div>
+                        <p class="font-semibold text-gray-800">Dr. Priya Maharana</p>
+                        <p class="text-sm text-gray-500">Heritage Conservationist</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="quote-card rounded-xl p-8 flex flex-col justify-between items-start fadeUp">
+                <span class="text-6xl text-orange-main font-bold mb-4">"</span>
+                <p class="text-gray-600 mb-6 italic text-left">
+                    "As someone passionate about history, this platform allows me to explore ancient temples and monuments like never before. Absolutely incredible!"
+                </p>
+                <div class="flex items-center w-full mb-4">
+                    <!-- Rating Stars -->
+                    <div class="flex text-yellow-500 mr-4">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                    </div>
+                </div>
+                <div class="flex items-center text-left">
+                    <img class="w-12 h-12 rounded-full mr-4" src="https://placehold.co/48x48/ec653a/ffffff?text=Rajesh" onerror="this.src='https://placehold.co/48x48/ec653a/ffffff?text=Rajesh';" alt="Rajesh Kumar">
+                    <div>
+                        <p class="font-semibold text-gray-800">Rajesh Kumar</p>
+                        <p class="text-sm text-gray-500">Cultural Enthusiast</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="quote-card rounded-xl p-8 flex flex-col justify-between items-start fadeRight">
+                <span class="text-6xl text-orange-main font-bold mb-4">"</span>
+                <p class="text-gray-600 mb-6 italic text-left">
+                    "I experienced Odisha's rich heritage from my home in Singapore. The AR tours made me feel like I was actually walking through the temples."
+                </p>
+                <div class="flex items-center w-full mb-4">
+                    <!-- Rating Stars -->
+                    <div class="flex text-yellow-500 mr-4">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545-4.735-4.608 6.572-.955L10 2l2.85 5.882 6.572.955-4.735 4.608 1.123 6.545z"/></svg>
+                    </div>
+                </div>
+                <div class="flex items-center text-left">
+                    <img class="w-12 h-12 rounded-full mr-4" src="https://placehold.co/48x48/ec653a/ffffff?text=Sarah" onerror="this.src='https://placehold.co/48x48/ec653a/ffffff?text=Sarah';" alt="Sarah Chen">
+                    <div>
+                        <p class="font-semibold text-gray-800">Sarah Chen</p>
+                        <p class="text-sm text-gray-500">International Tourist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer class="bg-gradient-to-r from-gray-900 via-red-900 to-orange-900 text-gray-200 pt-10 pb-6">
+  <div class="w-full flex justify-center items-center py-12 px-6  fadeUp">
+  
+  <!-- Team Credit Card -->
+  <div class="max-w-4xl w-full bg-gradient-to-r from-indigo-950 via-purple-900 to-red-900 rounded-xl shadow-lg p-8 text-center text-gray-100">
+
+    <!-- Avatar -->
+    <div class="flex justify-center mb-4 autoRotate">
+      <div class="h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+        <img src="images\teamlogo1.jpg" alt="Team_logo">
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h2 class="text-2xl font-bold mb-1">Made by Team TechSapien</h2>
+    <p class="text-gray-300 mb-6">Smart India Hackathon SIH - 2025 Project</p>
+
+    <!-- Challenge Solved -->
+    <div class="bg-white/10 p-4 rounded-lg mb-6 text-sm leading-relaxed text-gray-200">
+      <p>
+        <span class="font-semibold">Challenge Solved:</span> Digital Heritage Preservation &amp; AR Cultural Tourism Platform  
+        Transforming how people experience and preserve India's cultural heritage through cutting-edge AR technology.
+      </p>
+    </div>
+
+    <!-- Badges -->
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="bg-green-800 text-white px-4 py-2 rounded-full text-sm shadow"> SIH - 2025</span>
+      <span class="bg-indigo-700 text-white px-4 py-2 rounded-full text-sm shadow">🚀 Production Ready</span>
+      <span class="bg-purple-700 text-white px-4 py-2 rounded-full text-sm shadow">🤖 AI-Powered</span>
+    </div>
+
+  </div>
+</div>
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+    <!-- About Section -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="bg-orange-600 text-white px-2 py-1 rounded">🏛️</span>
+        <h2 class="text-lg font-bold">Heritage AR Odisha</h2>
+      </div>
+      <p class="text-sm text-gray-300 mb-3">Government of Odisha • Cultural Heritage Portal</p>
+      <p class="text-sm leading-relaxed text-gray-400">
+        Official digital heritage platform with real-time analytics and authentic data sources. 
+        Showcasing Odisha's rich cultural legacy through cutting-edge augmented reality technology 
+        and AI-powered content management.
+      </p>
+      <ul class="text-sm mt-4 space-y-2">
+        <li>📞 +91 674-2536-000</li>
+        <li>📧 heritage@odisha.gov.in</li>
+      </ul>
+    </div>
+
+    <!-- Explore Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Explore</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-2">
+          <span>🏠</span><a href="index.html" class="hover:text-orange-400">Home</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span>🗺️</span><a href="explorer.html" class="hover:text-orange-400">Odisha Explorer</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span>📱</span><a href="arportal.html" class="hover:text-orange-400">AR Portal</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Authentic Data / Stats -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Authentic Data</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="bg-red-800/40 p-3 rounded-lg">
+          <span class="text-orange-400 font-bold">200+</span><br>
+          Verified Heritage Sites
+        </li>
+        <li class="bg-red-800/40 p-3 rounded-lg">
+          <span class="text-orange-400 font-bold">50+</span><br>
+          AR Experiences
+        </li>
+        <li class="bg-red-800/40 p-3 rounded-lg">
+          <span class="text-orange-400 font-bold">Live</span><br>
+          Real-time Analytics
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="border-t border-gray-700 my-6"></div>
+
+  <!-- Bottom Bar -->
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <p>&copy; 2025 Heritage AR Odisha. All rights reserved.</p>
+    <p>Made by Team TechSapien</p>
+  </div>
+</footer>
+
+  <!-- Translation Script -->
+  <script>
+    const translations = {
+      en: {
+        site_title: "Heritage AR Odisha",
+        site_subtitle: "Cultural Preservation Platform",
+        nav_home: "Home",
+        nav_explorer: "Heritage Explorer",
+        nav_ar: "AR Portal",
+        hero_title: "Heritage AR Odisha",
+        hero_subtitle: "Step into the sacred temples, majestic forts, and timeless traditions of Odisha through immersive augmented reality experiences.",
+        explore_button: "Explore Heritage Sites",
+        demo_button: "Try AR Experience",
+        video_title: "Cultural Treasures, Digitally Preserved",
+        video_credit: "Digital Preservation for Cultural Heritage -- Courtesy of Vimeo",
+        creative_title: "Why Choose Heritage AR Odisha?",
+        creative_point1: "Sacred Temples",
+        creative_desc1: "Step inside Odisha’s grand temples with interactive 3D AR views.",
+        creative_point2: "Natural Wonders",
+        creative_desc2: "Discover wildlife, hills, rivers, and beaches like never before.",
+        creative_point3: "Cultural Treasures",
+        creative_desc3: "Celebrate Odisha’s festivals, dance, art, and handicrafts in AR.",
+        stats1: "Heritage Sites",
+        stats2: "AR Tours",
+        stats3: "Data Sources",
+        stats4: "Years of History",
+        footer_text: "All rights reserved.",
+        footer_credit: "This project is developed by the TechSapien team for SIH 2025."
+      },
+      hi: {
+        site_title: "हेरिटेज एआर ओडिशा",
+        site_subtitle: "सांस्कृतिक संरक्षण मंच",
+        nav_home: "होम",
+        nav_explorer: "विरासत अन्वेषक",
+        nav_ar: "एआर पोर्टल",
+        hero_title: "हेरिटेज एआर ओडिशा",
+        hero_subtitle: "पवित्र मंदिरों, भव्य किलों और शाश्वत परंपराओं में प्रवेश करें।",
+        explore_button: "विरासत स्थलों का अन्वेषण करें",
+        demo_button: "एआर अनुभव आज़माएँ",
+        video_title: "ओडिशा की समृद्ध विरासत का अन्वेषण करें",
+        video_credit: "वीडियो क्रेडिट: आधिकारिक ओडिशा पर्यटन चैनल",
+        creative_title: "हेरिटेज एआर ओडिशा क्यों चुनें?",
+        creative_point1: "पवित्र मंदिर",
+        creative_desc1: "ओडिशा के भव्य मंदिरों को 3D एआर दृश्यों में देखें।",
+        creative_point2: "प्राकृतिक अद्भुत",
+        creative_desc2: "वन्यजीव, पहाड़, नदियाँ और समुद्र तट खोजें।",
+        creative_point3: "सांस्कृतिक खजाने",
+        creative_desc3: "ओडिशा के त्योहार, नृत्य, कला और हस्तशिल्प का जश्न मनाएं।",
+        stats1: "विरासत स्थल",
+        stats2: "एआर पर्यटन",
+        stats3: "डेटा स्रोत",
+        stats4: "इतिहास के वर्ष",
+        footer_text: "सर्वाधिकार सुरक्षित।",
+        footer_credit: "यह परियोजना SIH 2025 के लिए टेकसपियन टीम द्वारा विकसित की गई है।"
+      },
+      or: {
+        site_title: "ହେରିଟେଜ୍ ଏଆର୍ ଓଡିଶା",
+        site_subtitle: "ସାଂସ୍କୃତିକ ସୁରକ୍ଷା ପ୍ଲାଟଫର୍ମ",
+        nav_home: "ମୂଳପୃଷ୍ଠା",
+        nav_explorer: "ଐତିହ୍ୟ ଅନୁସନ୍ଧାନକାରୀ",
+        nav_ar: "ଏଆର୍ ପୋର୍ଟାଲ୍",
+        hero_title: "ହେରିଟେଜ୍ ଏଆର୍ ଓଡିଶା",
+        hero_subtitle: "ପବିତ୍ର ମନ୍ଦିର, ଦୁର୍ଗ ଏବଂ ସଦାବହାର ପାରମ୍ପରିକତାରେ ପ୍ରବେଶ କରନ୍ତୁ।",
+        explore_button: "ଐତିହ୍ୟ ସ୍ଥଳଗୁଡ଼ିକୁ ଅନୁସନ୍ଧାନ କରନ୍ତୁ",
+        demo_button: "ଏଆର୍ ଅନୁଭବ କରନ୍ତୁ",
+        video_title: "ଓଡିଶାର ସମୃଦ୍ଧ ଐତିହ୍ୟକୁ ଅନୁସନ୍ଧାନ କରନ୍ତୁ",
+        video_credit: "ଭିଡିଓ କ୍ରେଡିଟ୍: ଆଧିକାରିକ ଓଡିଶା ପର୍ଯ୍ୟଟନ ଚ୍ୟାନେଲ୍",
+        creative_title: "ହେରିଟେଜ୍ ଏଆର୍ ଓଡିଶା କାହିଁକି ବାଛନ୍ତି?",
+        creative_point1: "ପବିତ୍ର ମନ୍ଦିର",
+        creative_desc1: "ଓଡିଶାର ଭବ୍ୟ ମନ୍ଦିରଗୁଡ଼ିକୁ 3D ଏଆର୍ ଦୃଶ୍ୟରେ ଦେଖନ୍ତୁ।",
+        creative_point2: "ପ୍ରାକୃତିକ ଆଶ୍ଚର୍ୟ",
+        creative_desc2: "ବନ୍ୟଜୀବ, ପାହାଡ଼, ନଦୀ ଏବଂ ସମୁଦ୍ରତଟ ଖୋଜନ୍ତୁ।",
+        creative_point3: "ସାଂସ୍କୃତିକ ଧନ",
+        creative_desc3: "ଓଡିଶାର ପର୍ବ, ନୃତ୍ୟ, କଳା ଏବଂ ହସ୍ତଶିଳ୍ପକୁ ପାଳନ କରନ୍ତୁ।",
+        stats1: "ଐତିହ୍ୟ ସ୍ଥଳ",
+        stats2: "ଏଆର୍ ଭ୍ରମଣ",
+        stats3: "ତଥ୍ୟ ସ୍ରୋତ",
+        stats4: "ଇତିହାସର ବର୍ଷ",
+        footer_text: "ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ।",
+        footer_credit: "ଏହି ପ୍ରକଳ୍ପଟି SIH 2025 ପାଇଁ TechSapien ଟିମ୍ ଦ୍ୱାରା ବିକାଶ କରାଯାଇଛି।"
+      }
+    };
+
+    const switcher = document.getElementById("languageSwitcher");
+
+    function applyTranslations(lang) {
+      document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        if (translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    switcher.addEventListener("change", e => {
+      applyTranslations(e.target.value);
+    });
+
+    // Default language
+    applyTranslations("en");
+  </script>
+</body>
+</html>

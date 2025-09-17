@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Odisha AR Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background: rgba(0,0,0,0.9);
+      z-index: 999;
+    }
+    nav h2 {
+      font-weight: bold;
+      font-size: 20px;
+      margin: 0;
+    }
+    nav .nav-links a {
+      color: #fff;
+      margin: 0 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    nav .nav-links a:hover {
+      color: #f97316;
+    }
+    #viewer-container {
+      margin-top: 70px;
+      width: 100%;
+      height: 65vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    model-viewer {
+      width: 90%;
+      height: 100%;
+      background: #000;
+      border-radius: 12px;
+    }
+    .info-panel {
+      margin-top: 15px;
+      background: #e0f2fe;
+      color: #000;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 95%;
+      margin-left:auto;
+      margin-right:auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+    @media(min-width:768px){
+      .info-panel{
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .info-text{
+      max-width:60%;
+    }
+    .nav-buttons{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .nav-buttons button{
+      padding: 8px 16px;
+      border:none;
+      border-radius:8px;
+      background:#2563eb;
+      color:white;
+      cursor:pointer;
+      font-weight:bold;
+    }
+    .nav-buttons button:hover{
+      background:#1d4ed8;
+    }
+  </style>
+  <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+  <!-- Header -->
+  <nav>
+    <div>
+      <h2>Odisha AR Viewer</h2>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Explorer</a>
+        <a href="arportal.html">AR Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Viewer -->
+  <div id="viewer-container">
+    <model-viewer id="arViewer"
+      src="images\jagannath_puri_temple_model.glb"
+      alt="AR Model"
+      auto-rotate
+      camera-controls
+      ar
+      ar-modes="webxr scene-viewer quick-look">
+    </model-viewer>
+  </div>
+
+  <!-- Info panel -->
+  <div id="infoPanel" class="info-panel">
+    <div class="info-text">
+      <h2 id="infoTitle">Konark Sun Temple</h2>
+      <p id="infoDesc">UNESCO World Heritage Site with stunning chariot-shaped architecture and intricate carvings.</p>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="prevSite()">⬅ Previous</button>
+      <button onclick="nextSite()">Next ➡</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer class="bg-gradient-to-r from-gray-900 via-red-900 to-orange-900 text-gray-200 pt-10 pb-6">
+  <div class="w-full flex justify-center items-center py-12 px-6  fadeUp">
+  
+  <!-- Team Credit Card -->
+  <div class="max-w-4xl w-full bg-gradient-to-r from-indigo-950 via-purple-900 to-red-900 rounded-xl shadow-lg p-8 text-center text-gray-100">
+
+    <!-- Avatar -->
+    <div class="flex justify-center mb-4 autoRotate">
+      <div class="h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+        <img src="images\teamlogo1.jpg" alt="Team_logo">
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h2 class="text-2xl font-bold mb-1">Made by Team TechSapien</h2>
+    <p class="text-gray-300 mb-6">Smart India Hackathon SIH - 2025 Project</p>
+
+    <!-- Challenge Solved -->
+    <div class="bg-white/10 p-4 rounded-lg mb-6 text-sm leading-relaxed text-gray-200">
+      <p>
+        <span class="font-semibold">Challenge Solved:</span> Digital Heritage Preservation &amp; AR Cultural Tourism Platform  
+        Transforming how people experience and preserve India's cultural heritage through cutting-edge AR technology.
+      </p>
+    </div>
+
+    <!-- Badges -->
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="bg-green-800 text-white px-4 py-2 rounded-full text-sm shadow"> SIH - 2025</span>
+      <span class="bg-indigo-700 text-white px-4 py-2 rounded-full text-sm shadow">🚀 Production Ready</span>
+      <span class="bg-purple-700 text-white px-4 py-2 rounded-full text-sm shadow">🤖 AI-Powered</span>
+    </div>
+
+  </div>
+</div>
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+    <!-- About Section -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="bg-orange-600 text-white px-2 py-1 rounded">🏛️</span>
+        <h2 class="text-lg font-bold">Heritage AR Odisha</h2>
+      </div>
+      <p class="text-sm text-gray-300 mb-3">Government of Odisha • Cultural Heritage Portal</p>
+      <p class="text-sm leading-relaxed text-gray-400">
+        Official digital heritage platform with real-time analytics and authentic data sources. 
+        Showcasing Odisha's rich cultural legacy through cutting-edge augmented reality technology 
+        and AI-powered content management.
+      </p>
+      <ul class="text-sm mt-4 space-y-2">
+        <li>📞 +91 81021 XXXXX</li>
+        <li>📧 heritageXXXXXXXX@gmail.com</li>
+      </ul>
+    </div>
+
+    <!-- Explore Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Explore</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-2">
+          <span>🏠</span><a href="index.html" class="hover:text-orange-400">Home</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span>🗺️</span><a href="explorer.html" class="hover:text-orange-400">Odisha Explorer</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span>📱</span><a href="arportal.html" class="hover:text-orange-400">AR Portal</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Authentic Data / Stats -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Authentic Data</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="bg-red-800/40 p-3 rounded-lg">
+          <span class="text-orange-400 font-bold">200+</span><br>
+          Verified Heritage Sites
+        </li>
+        <li class="bg-red-800/40 p-3 rounded-lg">
+          <span class="text-orange-400 font-bold">50+</span><br>
+          AR Experiences
+        </li>
+        <li class="bg-red-800/40 p-3 rounded-lg">
+          <span class="text-orange-400 font-bold">Live</span><br>
+          Real-time Analytics
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="border-t border-gray-700 my-6"></div>
+
+  <!-- Bottom Bar -->
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <p>&copy; 2025 Heritage AR Odisha. All rights reserved.</p>
+    <p>Made by Team TechSapien</p>
+  </div>
+</footer>
+
+
+  <script>
+    const sites = [
+      { name:"Konark Sun Temple", description:"- UNESCO World Heritage Site with stunning chariot-shaped architecture and intricate carvings.", model:"images/konark symbol.glb" },
+      { name:"Lingaraj Temple", description:"- Bhubaneswar's oldest Shiva temple, Kalinga architecture, thousands of devotees annually.", model:"images/jagannath_temple.glb" },
+      { name:"Jagannath Temple", description:"- Located in Puri, famous for Rath Yatra, one of India's Char Dham pilgrimage sites.", model:"images/jagannath_puri_temple_model.glb" },
+      { name:"Udayagiri Caves", description:"- 2nd century BCE caves with Jain and Hindu monuments, rock-cut architecture and inscriptions.", model:"images/templegood.glb" },
+      { name:"Chilika Lake", description:"- Asia’s largest brackish water lagoon, home to migratory birds, biodiversity hotspot, Ramsar site.", model:"https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" },
+      { name:"Rajarani Temple", description:"- 11th century temple, exquisite red and yellow sandstone carvings, unique Kalinga style.", model:"https://modelviewer.dev/shared-assets/models/Astronaut.glb" },
+      { name:"Mukteshwar Temple", description:"- 10th century temple, known for sculptural work, shining example of Kalinga architecture.", model:"https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" },
+      { name:"Dhauli Shanti Stupa", description:"- Peace pagoda marking Ashoka’s transformation post Kalinga war. Symbol of non-violence.", model:"images/templegood.glb" },
+      { name:"Barabati Fort", description:"- 14th century fort in Cuttack, historically important military and administrative center.", model:"https://modelviewer.dev/shared-assets/models/Horse.glb" },
+      { name:"Similipal National Park", description:"- Biodiversity hotspot with dense forests, waterfalls, tigers and elephants. Protected national park.", model:"https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" }
+    ];
+
+    let currentIndex = 0;
+    const viewer = document.getElementById("arViewer");
+    const infoTitle = document.getElementById("infoTitle");
+    const infoDesc = document.getElementById("infoDesc");
+
+    function updateSite(index){
+      currentIndex = index;
+      viewer.src = sites[index].model;
+      infoTitle.textContent = sites[index].name;
+      infoDesc.textContent = sites[index].description;
+    }
+
+    function prevSite(){
+      let index = (currentIndex-1 + sites.length)%sites.length;
+      updateSite(index);
+    }
+
+    function nextSite(){
+      let index = (currentIndex+1)%sites.length;
+      updateSite(index);
+    }
+
+    // Initialize
+    updateSite(0);
+  </script>
+</body>
+</html>
